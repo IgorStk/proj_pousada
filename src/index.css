@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Paleta: costa cearense — atlântico profundo, água-marinha e bugambília */
+  --color-atlantico: #0b3c49;
+  --color-atlantico-escuro: #072830;
+  --color-marinha: #2f9c95;
+  --color-marinha-clara: #7fc8c0;
+  --color-areia: #efe1be;
+  --color-areia-clara: #f8f1de;
+  --color-bugambilia: #c2447a;
+  --color-bugambilia-escura: #9c3363;
+  --color-tinta: #12262b;
+  --color-branco: #ffffff;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-areia-clara);
+  color: var(--color-tinta);
+  font-family: var(--font-body);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Foco de teclado visível em toda a aplicação */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-marinha);
+  outline-offset: 2px;
+}
