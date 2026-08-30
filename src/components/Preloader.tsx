@@ -158,16 +158,7 @@ export function Preloader({ onFinish }: PreloaderProps) {
   if (!visivel) return null;
 
   return (
-    <div
-      className={`fixed inset-0 z-[9999] overflow-hidden bg-areia-clara transition-opacity duration-500 ${
-        saindo
-          ? "opacity-0 pointer-events-none"
-          : "opacity-100"
-      }`}
-      role="status"
-      aria-live="polite"
-      aria-label={`Carregando, ${progresso}%`}
-    >
+    <div className={`fixed inset-0 z-[9999] overflow-hidden bg-areia-clara transition-opacity duration-500 ${saindo ? "opacity-0 pointer-events-none": "opacity-100"}`} role="status" aria-live="polite" aria-label={`Carregando, ${progresso}%`}>
       <style>{`
         @keyframes onda-deriva {
           from {
@@ -180,78 +171,19 @@ export function Preloader({ onFinish }: PreloaderProps) {
         }
       `}</style>
 
-      <div
-        className="
-          absolute
-          left-1/2
-          top-[42%]
-          z-10
-          h-40
-          w-40
-          -translate-x-1/2
-          -translate-y-1/2
-          rounded-full
-          bg-atlantico/10
-          md:h-52
-          md:w-52
-        "
-        aria-hidden="true"
-      />
+      <div className="absolute left-1/2 top-[42%] z-10 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-atlantico/10 md:h-52 md:w-52" aria-hidden="true"/>
 
-      <div
-        ref={aguaRef}
-        className="
-          absolute
-          inset-x-0
-          top-0
-          z-20
-          h-screen
-          bg-atlantico
-          will-change-transform
-        "
-        style={{
-          transform: "translate3d(0, 100vh, 0)",
-        }}
-      >
+      <div ref={aguaRef} className="absolute inset-x-0 top-0 z-20 h-screen bg-atlantico will-change-transform" style={{transform: "translate3d(0, 100vh, 0)",}}>
 
-        <div
-          className="
-            absolute
-            inset-x-0
-            bottom-full
-            h-[90px]
-            overflow-hidden
-            md:h-[130px]
-          "
-          aria-hidden="true"
-        >
-          <div
-            className="flex h-full"
-            style={{
-              width: "300vw",
-              animation: reduzMovimento
-                ? "none"
-                : `onda-deriva ${DERIVA_SEGUNDOS}s linear infinite`,
-              willChange: "transform",
-            }}
-          >
+        <div className="absolute inset-x-0 bottom-full h-[90px] overflow-hidden md:h-[130px]" aria-hidden="true">
+          <div className="flex h-full" style={{width: "300vw", animation: reduzMovimento ? "none": `onda-deriva ${DERIVA_SEGUNDOS}s linear infinite`,willChange: "transform",}}>
             <TileOnda />
             <TileOnda />
             <TileOnda />
           </div>
         </div>
 
-        <p
-          className="
-            pt-16
-            text-center
-            font-mono
-            text-4xl
-            text-branco
-            md:pt-24
-            md:text-6xl
-          "
-        >
+        <p className="pt-16 text-center font-mono text-4xl text-branco md:pt-24 md:text-6xl">
           {progresso}%
         </p>
       </div>

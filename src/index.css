@@ -2,7 +2,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Paleta: costa cearense — atlântico profundo, água-marinha e bugambília */
   --color-atlantico: #0b3c49;
   --color-atlantico-escuro: #072830;
   --color-marinha: #2f9c95;
@@ -40,7 +39,6 @@ body {
   }
 }
 
-/* Foco de teclado visível em toda a aplicação */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
