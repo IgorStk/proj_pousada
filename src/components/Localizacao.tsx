@@ -17,8 +17,8 @@ export function Localizacao() {
         </div>
         <div className="rounded-2xl overflow-hidden border border-branco/20 h-72 md:h-80">
           <iframe
-            title="Mapa da Pousada Nossa Senhora das Graças"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63899.6!2d-38.543!3d-3.7419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sFortaleza%2C%20CE!5e0!3m2!1spt-BR!2sbr"
+            title="Mapa da Pousada Nossa Senhora de Fátima"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9199.575502197747!2d-38.52217903475772!3d-3.74810442727637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c748e3d037f9ff%3A0xb8f38fad2e9e7985!2sPousada%20Nossa%20Senhora%20de%20F%C3%A1tima!5e0!3m2!1spt-BR!2sbr!4v1788110018350!5m2!1spt-BR!2sbr" 
             width="100%"
             height="100%"
             style={{ border: 0 }}

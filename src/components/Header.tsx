@@ -16,7 +16,7 @@ export function Header() {
     <header className="sticky top-0 z-40 bg-atlantico/95 backdrop-blur text-branco shadow-sm">
       <div className="mx-auto max-w-6xl px-5 md:px-8 flex items-center justify-between h-16 md:h-20">
         <Link to="/" className="font-display text-lg md:text-xl tracking-tight">
-          Pousada N.S. das Graças
+          Pousada N.S. de Fátima
         </Link>
 
         <nav className="hidden md:flex items-center gap-7 text-sm">

@@ -12,7 +12,7 @@ export function Sobre() {
         </div>
         <div className="text-tinta/80 leading-relaxed space-y-4">
           <p>
-            Em Fortaleza, a Pousada Nossa Senhora das Graças conta com
+            Em Fortaleza, a Pousada Nossa Senhora de Fátima conta com
             acomodações com terraço e Wi-Fi grátis em toda a propriedade,
             além de estacionamento privativo gratuito para quem vier de
             carro. O North Shopping fica a 6,7 km de distância e a Arena

@@ -24,7 +24,7 @@ export function AdminLogin() {
     <div className="min-h-screen bg-atlantico flex items-center justify-center px-5">
       <div className="w-full max-w-sm">
         <h1 className="font-display text-2xl text-branco text-center mb-1">
-          Pousada N.S. das Graças
+          Pousada N.S. de Fátima
         </h1>
         <p className="text-branco/60 text-center text-sm mb-8">Painel administrativo</p>
 

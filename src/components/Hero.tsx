@@ -14,7 +14,7 @@ export function Hero() {
             <span className="italic text-marinha-clara">a estadia fica.</span>
           </h1>
           <p className="mt-6 text-base md:text-lg text-branco/80 max-w-md">
-            Pousada Nossa Senhora das Graças: acomodação simples e acolhedora,
+            Pousada Nossa Senhora de Fátima: acomodação simples e acolhedora,
             a poucos minutos das principais atrações de Fortaleza, com
             recepção 24 horas e Wi-Fi grátis em toda a propriedade.
           </p>
@@ -38,7 +38,7 @@ export function Hero() {
           <div className="absolute -inset-3 border border-marinha-clara/30 rounded-2xl -rotate-2" />
           <img
             src="/frente-pousada.jpg"
-            alt="Fachada da Pousada Nossa Senhora das Graças"
+            alt="Fachada da Pousada Nossa Senhora de Fátima"
             className="relative rounded-2xl w-full h-[320px] md:h-[420px] object-cover rotate-1 shadow-2xl"
           />
         </div>
