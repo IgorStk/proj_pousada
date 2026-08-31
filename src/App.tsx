@@ -8,6 +8,8 @@ import { AdminLayout } from "./pages/admin/AdminLayout";
 import { AdminDashboard } from "./pages/admin/AdminDashboard";
 import { AdminRoomTypes } from "./pages/admin/AdminRoomTypes";
 import { RequireAdmin } from "./pages/admin/RequireAdmin";
+import { EsqueciSenha } from "./pages/EsqueciSenha";
+import { RedefinirSenha } from "./pages/RedefinirSenha";
 
 export default function App() {
   return (
@@ -16,6 +18,8 @@ export default function App() {
       <Route path="/reservar/:tipoQuartoId" element={<Checkout />} />
       <Route path="/reserva-confirmada/:codigo" element={<ReservaConfirmada />} />
       <Route path="/minha-reserva" element={<MinhaReserva />} />
+      <Route path="/esqueci-senha" element={<EsqueciSenha />} />
+      <Route path="/redefinir-senha" element={<RedefinirSenha />} />
 
       <Route path="/admin/login" element={<AdminLogin />} />
       <Route element={<RequireAdmin />}>

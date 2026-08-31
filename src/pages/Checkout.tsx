@@ -59,7 +59,8 @@ export function Checkout() {
       });
       return data;
     },
-    onSuccess: (reserva) => navigate(`/reserva-confirmada/${reserva.codigo}`),
+    onSuccess: (reserva) =>
+      navigate(`/reserva-confirmada/${reserva.codigo}`, { state: { reserva } }),
     onError: (err: any) => {
       setErroApi(
         err?.response?.data?.message ??

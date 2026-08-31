@@ -7,6 +7,7 @@ import type { Reserva } from "../types";
 
 export function MinhaReserva() {
   const [codigo, setCodigo] = useState("");
+  const [email, setEmail] = useState("");
   const [reserva, setReserva] = useState<Reserva | null>(null);
   const [erro, setErro] = useState<string | null>(null);
   const [carregando, setCarregando] = useState(false);
@@ -17,7 +18,9 @@ export function MinhaReserva() {
     setErro(null);
     setReserva(null);
     try {
-      const { data } = await api.get<Reserva>(`/reservations/codigo/${codigo.trim()}`);
+      const { data } = await api.get<Reserva>("/reservations/consulta", {
+        params: { codigo: codigo.trim(), email: email.trim() },
+      });
       if (!data) throw new Error();
       setReserva(data);
     } catch {
@@ -40,13 +43,23 @@ export function MinhaReserva() {
           </p>
 
           <form onSubmit={buscar} className="flex gap-3">
-            <input
-              value={codigo}
-              onChange={(e) => setCodigo(e.target.value)}
-              placeholder="PNSG-2026-AB12C"
-              className="flex-1 rounded-lg border border-tinta/15 px-3 py-2.5 font-mono uppercase"
-              required
-            />
+            <div className="flex-1 space-y-3">
+              <input
+                value={codigo}
+                onChange={(e) => setCodigo(e.target.value)}
+                placeholder="PNSG-2026-AB12C"
+                className="w-full rounded-lg border border-tinta/15 px-3 py-2.5 font-mono uppercase"
+                required
+              />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="E-mail usado na reserva"
+                className="w-full rounded-lg border border-tinta/15 px-3 py-2.5"
+                required
+              />
+            </div>
             <button
               type="submit"
               disabled={carregando}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { Link } from "react-router-dom";
 
 export function AdminLogin() {
   const { login, carregando } = useAuth();
@@ -57,6 +58,9 @@ export function AdminLogin() {
           >
             {carregando ? "Entrando..." : "Entrar"}
           </button>
+          <Link to="/esqueci-senha" className="block text-center text-sm text-atlantico hover:underline">
+            Esqueci minha senha
+          </Link>
         </form>
       </div>
     </div>

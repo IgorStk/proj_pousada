@@ -9,6 +9,5 @@ export function formatarData(data: string | Date): string {
 }
 
 export function paraISODate(data: string): string {
-  // input type="date" já retorna YYYY-MM-DD
   return data;
 }
