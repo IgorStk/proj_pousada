@@ -7,7 +7,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { api } from "../lib/api";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { formatarData, formatarMoeda } from "../lib/format";
+import { formatarData, formatarMoeda, noitesEntreDatas } from "../lib/format";
 import type { Reserva, TipoQuarto } from "../types";
 
 const schema = z.object({
@@ -73,10 +73,7 @@ export function Checkout() {
     checkIn && checkOut
       ? Math.max(
           1,
-          Math.ceil(
-            (new Date(checkOut).getTime() - new Date(checkIn).getTime()) /
-              (1000 * 60 * 60 * 24),
-          ),
+          noitesEntreDatas(checkIn, checkOut),
         )
       : 1;
   const total = tipo ? Number(tipo.precoDiaria) * noites : 0;

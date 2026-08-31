@@ -12,6 +12,7 @@ type FormState = {
   precoDiaria: number;
   totalUnidades: number;
   comodidades: string; // separado por vírgula no formulário
+  imagens: string[];
 };
 
 const VAZIO: FormState = {
@@ -22,6 +23,7 @@ const VAZIO: FormState = {
   precoDiaria: 0,
   totalUnidades: 1,
   comodidades: "",
+  imagens: [],
 };
 
 export function AdminRoomTypes() {
@@ -76,6 +78,7 @@ export function AdminRoomTypes() {
       precoDiaria: Number(tipo.precoDiaria),
       totalUnidades: tipo.totalUnidades,
       comodidades: tipo.comodidades.join(", "),
+      imagens: tipo.imagens,
     });
     setEditandoId(tipo.id);
   }
@@ -87,9 +90,8 @@ export function AdminRoomTypes() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    const payload = {
+    const camposComuns = {
       nome: form.nome,
-      slug: form.slug,
       descricao: form.descricao,
       capacidade: Number(form.capacidade),
       precoDiaria: Number(form.precoDiaria),
@@ -98,13 +100,13 @@ export function AdminRoomTypes() {
         .split(",")
         .map((c) => c.trim())
         .filter(Boolean),
-      imagens: [],
+      imagens: form.imagens,
     };
 
     if (editandoId === "novo") {
-      criar.mutate(payload);
+      criar.mutate({ ...camposComuns, slug: form.slug });
     } else if (editandoId) {
-      editar.mutate({ id: editandoId, payload });
+      editar.mutate({ id: editandoId, payload: camposComuns });
     }
   }
 
@@ -188,8 +190,12 @@ export function AdminRoomTypes() {
                 required
                 value={form.slug}
                 onChange={(e) => setForm({ ...form, slug: e.target.value })}
+                disabled={editandoId !== "novo"}
                 className="w-full rounded-lg border border-tinta/15 px-3 py-2 font-mono text-sm"
               />
+              {editandoId !== "novo" && (
+                <p className="text-xs text-tinta/50 mt-1">O slug não pode ser alterado após a criação.</p>
+              )}
             </div>
 
             <div>

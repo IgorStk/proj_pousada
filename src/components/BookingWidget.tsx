@@ -1,16 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDisponibilidade } from "../hooks/useRoomTypes";
-import { formatarMoeda } from "../lib/format";
+import { adicionarDias, dataParaISO, formatarMoeda } from "../lib/format";
 import { WaveDivider } from "./WaveDivider";
 
 function hojeISO() {
-  return new Date().toISOString().slice(0, 10);
+  return dataParaISO(new Date());
 }
 function amanhaISO() {
-  const d = new Date();
-  d.setDate(d.getDate() + 1);
-  return d.toISOString().slice(0, 10);
+  return adicionarDias(hojeISO(), 1);
 }
 
 export function BookingWidget() {
