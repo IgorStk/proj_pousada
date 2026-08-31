@@ -39,7 +39,7 @@ export function MinhaReserva() {
             Consultar minha reserva
           </h1>
           <p className="text-tinta/60 mb-8">
-            Digite o código que você recebeu na confirmação (ex: PNSG-2026-AB12C)
+            Digite o código que você recebeu na confirmação (ex: PNSF-2026-AB12C)
           </p>
 
           <form onSubmit={buscar} className="flex gap-3">
@@ -47,7 +47,7 @@ export function MinhaReserva() {
               <input
                 value={codigo}
                 onChange={(e) => setCodigo(e.target.value)}
-                placeholder="PNSG-2026-AB12C"
+                placeholder="PNSF-2026-AB12C"
                 className="w-full rounded-lg border border-tinta/15 px-3 py-2.5 font-mono uppercase"
                 required
               />
